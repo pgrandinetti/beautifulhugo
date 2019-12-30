@@ -73,11 +73,13 @@
                   <h2 class="{{ .Type }}-subheading">{{ $subtitle }}</h2>
                 {{ end }}
               {{ end }}
-              {{ if eq .Type "page" }}
-                {{ partial "page_meta.html" . }}
-              {{ end }}
-              {{ if eq .Type "post" }}
-                {{ partial "post_meta.html" . }}
+              {{ if (not .IsHome) }}
+                {{ if eq .Type "page" }}
+                  {{ partial "page_meta.html" . }}
+                {{ end }}
+                {{ if eq .Type "post" }}
+                  {{ partial "post_meta.html" . }}
+                {{ end }}
               {{ end }}
             </div>
           </div>
