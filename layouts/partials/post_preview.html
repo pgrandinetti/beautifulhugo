@@ -19,6 +19,7 @@
     <p class="post-meta">
         {{ partial "post_meta.html" . }}
     </p>
+    <!--
     <div class="post-entry">
         {{ if .Truncated }}
         {{ .Summary }}
@@ -27,6 +28,7 @@
         {{ .Content }}
         {{ end }}
     </div>
+    -->
 
     {{ if .Params.tags }}
     <div class="blog-tags">

@@ -1,35 +1,26 @@
 {{ define "main" }}
-  <div role="main" class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        {{ with .Content }}
-          <div>
-            {{.}}
-          </div>
-        {{ end }}
 
-        <div class="posts-list">
-          {{ $pag := .Paginate (where site.RegularPages "Type" "in" site.Params.mainSections) }}
-          {{ range $pag.Pages }}
-            {{ partial "post_preview" . }}
-          {{ end }}
+<div role="main" class="container text-center">
+  <div class="row">
+    <div class="col-lg-3 col-md-3 mb-4">
+        <div class="text-center">
+            <ul style="list-style-type:none;padding:0">
+                {{ range .Site.Menus.main }}
+                    {{ $text := print .Name | safeHTML }}
+                    <li><a href="{{ .URL }}" style="color:inherit;"><b>{{ $text }}</b></a>
+                {{ end }}
+            <ul>
+            &nbsp;
         </div>
-
-        {{ if or (.Paginator.HasPrev) (.Paginator.HasNext) }}
-          <ul class="pager main-pager">
-            {{ if .Paginator.HasPrev }}
-              <li class="previous">
-                <a href="{{ .Permalink }}page/{{ .Paginator.Prev.PageNumber }}/">&larr; {{ i18n "newerPosts" }}</a>
-              </li>
-            {{ end }}
-            {{ if .Paginator.HasNext }}
-              <li class="next">
-                <a href="{{ .Permalink }}page/{{ .Paginator.Next.PageNumber }}/">{{ i18n "olderPosts" }} &rarr;</a>
-              </li>
-            {{ end }}
-          </ul>
-        {{ end }}
-      </div>
+    </div>
+    <div class="col-lg-1 col-md-1 mb-4"></div>
+    <div class="col-lg-8 col-md-8 mb-4">
+        <div class="text-left">
+            <p>Hey there, my name is Pietro. I am a systems engineer and lifelong student.</p>
+            <p>This is my personal site and blog. Use navigation at the top or on your left, and please don't get lost!</p>
+        </div>
     </div>
   </div>
+</div>
+
 {{ end }}
