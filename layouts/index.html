@@ -1,25 +1,25 @@
 {{ define "main" }}
 
 <div role="main" class="container text-center">
-  <div class="row">
-    <div class="col-lg-3 col-md-3 mb-4">
-        <div class="text-center">
-            <ul style="list-style-type:none;padding:0">
-                {{ range .Site.Menus.main }}
-                    {{ $text := print .Name | safeHTML }}
-                    <li><a href="{{ .URL }}" style="color:inherit;"><b>{{ $text }}</b></a>
-                {{ end }}
-            <ul>
-            &nbsp;
-        </div>
-    </div>
-    <div class="col-lg-1 col-md-1 mb-4"></div>
-    <div class="col-lg-8 col-md-8 mb-4">
+  <div class="row text-center">
+    <div class="col-lg-2 col-md-2 col-sm-2"></div>
+    <div class="col-lg-8 col-md-8 col-sm-8 mb-4">
         <div class="text-left">
             <p>Hey there, my name is Pietro. I am a systems engineer and lifelong student.</p>
-            <p>This is my personal site and blog. Use navigation at the top or on your left, and please don't get lost!</p>
+            <p>This is my personal site and blog. Use the navigation and please don't get lost in my thoughts!</p>
         </div>
     </div>
+    <div class="col-lg-2 col-md-2 col-sm-2"></div>
+  </div>
+  <div class="row text-center">
+    <div class="col-lg-2 col-md-2 col-sm-2"></div>
+    <div class="col-lg-4 col-md-4 col-sm-4 pb-4 text-center">
+      <button type="button" class="btn btn-secondary"><a href="../page/about">About</a></button>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-4 pt-4">
+      <button type="button" class="btn btn-secondary"><a href="../post">Writings</a></button>
+    </div>
+    <div class="col-lg-2 col-md-2 col-sm-2"></div>
   </div>
 </div>
 
